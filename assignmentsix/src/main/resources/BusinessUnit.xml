@@ -1,0 +1,6 @@
+<business-unit-info package-name="com.assignmentsix"
+	name="assignmentsix" version="1.0" title="assignmentsix">
+	<description>assignmentsix</description>
+	<dependency-business-units>
+	</dependency-business-units>
+</business-unit-info>

@@ -1,0 +1,30 @@
+<flow id="flowprojecttest" name="flowprojecttest" begin-node-id="hello" private-context="false" enable="false">
+  <nodes>
+    <node id="hello" name="hello" title="转换对象">
+      <component name="helloWorldComponent">
+        <properties>
+          <flow-property name="name" value="${name}"/>
+          <flow-property name="resultKey" value="${key}"/>
+        </properties>
+      </component>
+    </node>
+    <node id="callService" name="callService" title="操作">
+      <component name="callService">
+        <properties>
+          <flow-property name="serviceId" value=""/>
+          <flow-property name="serviceName" value="serviceDoNothing"/>
+          <flow-property name="groupId" value="assignmentsix"/>
+          <flow-property name="artifactId" value="myService"/>
+        </properties>
+      </component>
+    </node>
+    
+     <node id="flowpage" name="flowpage" title="转换对象">
+      <component name="fullContextUrlRedirectComponent">
+        <properties>
+          <flow-property name="path" value="${path}"/>
+        </properties>
+      </component>
+    </node>
+  </nodes>
+</flow>

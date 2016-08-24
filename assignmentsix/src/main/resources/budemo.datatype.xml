@@ -1,0 +1,35 @@
+<standard-types package-name="aa.bb">
+	<standard-type type="hsvarchar" id="hsvarcharstdtypeid">
+		<placeholder-list>
+			<placeholder name="l" title="长度">
+				<description>aa</description>
+			</placeholder>
+		</placeholder-list>
+		<dialect-type-list>
+			<dialect-type language="oracle" type="varchar(${l})"
+				default-value="aa">
+				<placeholder-value name="l" value="12" />
+			</dialect-type>
+			
+			<dialect-type language="java" type="String"
+				default-value="aa">
+			</dialect-type>
+		</dialect-type-list>
+	</standard-type>
+	<standard-type type="hsvarchar1" id="hsvarchar1stdtypeid">
+		<placeholder-list>
+			<placeholder name="length" title="长度">
+				<description>aa</description>
+			</placeholder>
+		</placeholder-list>
+		<dialect-type-list>
+			<dialect-type language="oracle" type="varchar(${length})"
+				default-value="aa">
+			</dialect-type>
+			<dialect-type language="java" type="Integer"
+				default-value="aa">
+				<placeholder-value name="l" value="12" />
+			</dialect-type>
+		</dialect-type-list>
+	</standard-type>
+</standard-types>

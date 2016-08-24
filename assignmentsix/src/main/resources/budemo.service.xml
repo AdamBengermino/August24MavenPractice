@@ -1,0 +1,11 @@
+<service-components>
+	<service-component group-id="assignmentsix" type="com.assignmentsix.MyService" artifact-id="myService">
+		<service-method name="serviceDoNothing" local-name="serviceDoNothing" service-id="serviceDoNothing" version="" description="serviceDoNothing" method-name="doNothing">
+			<service-parameters>
+				<service-parameter name="p" type="java.lang.String" required="true" is-array="false">
+				</service-parameter>
+			</service-parameters>
+			
+		</service-method>
+	</service-component>
+</service-components>

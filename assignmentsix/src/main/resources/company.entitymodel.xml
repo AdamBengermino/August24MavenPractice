@@ -1,0 +1,163 @@
+<entity-model uuid="companyuuid" name="company" title="公司" ignore="true"
+	description="公司模型" enable-delete="true" enable-modity="true" version="2.0"
+	cache-enabled="true" package-name="com.hundsun">
+	<entity-groups>
+		<entity-group uuid="basicgroup" name="basicgroup" title="基本信息"
+			description="基本信息" enable-delete="true" enable-modity="true">
+			<entity-fields>
+				<entity-field standard-field="stdidcompanyid" primary="true" input-mode="textMode"
+					unique="true" display="true" uuid="companyiduuid">
+					<validate-rules />
+				</entity-field>
+				<entity-field standard-field="stdidcompanyname" primary="false" input-mode="textMode"
+					unique="false" display="true" uuid="companynameuuid">
+					<validate-rules />
+				</entity-field>
+			</entity-fields>
+		</entity-group>
+		<entity-group uuid="othergroup" name="othergroup" title="其他信息"
+			description="其他信息" enable-delete="true" enable-modity="true">
+			<entity-fields>
+				<entity-field standard-field="stdidaddress" primary="false"  input-mode="textMode"
+					unique="false" display="true" uuid="addressuuid">
+					<validate-rules />
+				</entity-field>
+				<entity-field standard-field="stdidcontory" primary="false"  input-mode="textMode"
+					unique="false" display="true" uuid="contoryuuid">
+					<validate-rules />
+				</entity-field>
+			</entity-fields>
+		</entity-group>
+	</entity-groups>
+	<indexs>
+		<index uuid="companynameadress" name="companynameadress" title="邮寄地址索引"
+			description="邮寄地址索引" enable-delete="true" enable-modity="true"
+			unique="true">
+			<fields>
+				<string>addressuuid</string>
+				<string>companynameuuid</string>
+			</fields>
+		</index>
+	</indexs>
+	<operations>
+		<operation uuid="addopuuid" name="add" title="新增公司" type="add"
+			description="新增公司" enable-delete="true" enable-modity="true"
+			confirm="true" templete="templaate">
+			<operation-groups>
+				<operation-group uuid="addopgroupuuid" name="addopgroup" title="基本信息"
+					description="基本信息" enable-delete="true" enable-modity="true">
+					<operation-fields>
+						<operation-field default-value="" editable="true"
+							hidden="true" entity-field-uuid="companyiduuid" />
+						<operation-field default-value="" editable="true"
+							hidden="true" entity-field-uuid="companynameuuid" />
+					</operation-fields>
+				</operation-group>
+				<operation-group uuid="addopgroup2uuid" name="addopgroup2" title="其他信息"
+					description="其他信息" enable-delete="true" enable-modity="true">
+					<operation-fields>
+						<operation-field default-value="" editable="true"
+							hidden="true" entity-field-uuid="addressuuid" />
+						<operation-field default-value="1" editable="true"
+							hidden="true" entity-field-uuid="contoryuuid" />
+					</operation-fields>
+				</operation-group>
+			</operation-groups>
+		</operation>
+		
+		<operation uuid="updateopuuid" name="update" title="修改公司" type="update"
+			description="修改公司" enable-delete="true" enable-modity="true"
+			confirm="true" templete="templaate">
+			<operation-groups>
+				<operation-group uuid="updateopgroupuuid" name="updateopgroup" title="基本信息"
+					description="基本信息" enable-delete="true" enable-modity="true">
+					<operation-fields>
+						<operation-field default-value="" editable="true"
+							hidden="true" entity-field-uuid="companyiduuid" />
+						<operation-field default-value="" editable="true"
+							hidden="true" entity-field-uuid="companynameuuid" />
+					</operation-fields>
+				</operation-group>
+				<operation-group uuid="updateopgroup2uuid" name="updateopgroup2" title="其他信息"
+					description="其他信息" enable-delete="true" enable-modity="true">
+					<operation-fields>
+						<operation-field default-value="" editable="true"
+							hidden="true" entity-field-uuid="addressuuid" />
+						<operation-field default-value="1" editable="true"
+							hidden="true" entity-field-uuid="contoryuuid" />
+					</operation-fields>
+				</operation-group>
+			</operation-groups>
+		</operation>
+		
+		<operation uuid="queryuuid" name="query" title="查询中国公司" type="query"
+			description="查询中国公司" enable-delete="true" enable-modity="true"
+			confirm="true" templete="templaate">
+			<condition-fields>
+				<condition-field uuid="contoryuuid" compare-mode="comparemode"
+					 editable="true" hidden="false">
+					<value const-value="1"></value>
+				</condition-field>
+			</condition-fields>
+			<operation-groups>
+				<operation-group uuid="opgroup3uuid" name="基本信息" title="基本信息"
+					description="基本信息" enable-delete="true" enable-modity="true">
+					<operation-fields>
+						<operation-field default-value="dv" editable="true"
+							hidden="true" entity-field-uuid="companyiduuid" />
+					</operation-fields>
+				</operation-group>
+			</operation-groups>
+		</operation>
+		<operation uuid="deleteuuid" name="delete" title="删除公司" type="delete"
+			description="删除公司" enable-delete="true" enable-modity="true"
+			confirm="true" templete="templaate">
+			<condition-fields>
+				<condition-field field-uuid="companyiduuid" compare-mode="comparemode"
+					 editable="true" hidden="false">
+					<value const-value="1"></value>
+				</condition-field>
+			</condition-fields>
+		</operation>
+	</operations>
+	<views>
+		<view uuid="viewuuid" name="view1" title="视图1" description="视图1"
+			enable-delete="true" enable-modity="true" style="style" templete="template">
+			<pageInfo page-size="10" style="0" />
+			<condition-fields>
+			
+			</condition-fields>
+			<category-fields>
+				<category-field field-uuid="contoryuuid" />
+			</category-fields>
+			<view-groups>
+				<view-group uuid="viewgroup1uuid" name="viewgroupname"
+					title="视图分组1" description="视图分组1" enable-delete="true"
+					enable-modity="true">
+					<display-field field-uuid="companyiduuid" />
+					<display-field field-uuid="companynameuuid" />
+				</view-group>
+				<view-group uuid="viewgroup2uuid" name="viewgroup2name"
+					title="视图分组2" description="视图分组2" enable-delete="true"
+					enable-modity="true">
+					<display-field field-uuid="addressuuid" />
+					<display-field field-uuid="contoryuuid" />
+				</view-group>
+			</view-groups>
+			<order-fields>
+				<order-field field-uuid="companynameuuid" order-mode="desc"
+					editable="true" hidden="false" />
+				<order-field field-uuid="companyiduuid" order-mode="asc"
+					editable="true" hidden="false" />
+			</order-fields>
+			<group-fields>
+				<group-field field-uuid="contoryuuid" />
+			</group-fields>
+			<operations>
+				<string>addopuuid</string>
+				<string>queryuuid</string>
+			</operations>
+		</view>
+		
+	</views>
+</entity-model>

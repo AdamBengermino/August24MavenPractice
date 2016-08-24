@@ -1,0 +1,5 @@
+<beans package-name="assignmentsix">
+	<bean id="helloWorldComponent" name="helloWorldComponent" scope="singleton"
+		type="org.tinygroup.flow.ComponentInterface" class="com.assignmentsix.HelloWorldComponent">
+	</bean>
+</beans>

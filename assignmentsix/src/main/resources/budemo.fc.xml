@@ -1,0 +1,11 @@
+<components>
+	<component name="helloWorldComponent" bean="helloWorldComponent"
+		title="helloWorldComponent" icon="/icon/component.gif">
+		<short-description> component</short-description>
+		<long-description> component long description
+		</long-description>
+		<parameter name="name" title="操作的字符串" type="java.lang.String"></parameter>
+		<parameter name="resultKey" title="结果集在context中的key" type="java.lang.String"></parameter>
+	</component>
+</components>
+
